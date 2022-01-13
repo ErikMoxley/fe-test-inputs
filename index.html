@@ -1,15 +1,46 @@
-<form id="math-form">
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Front End Test</title>
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    </head>
+      <body>
+        <form id="math-form">
+          <label>Input with positive numbers only</label><br/><br/>
+          <label for="name">Name *</label><br>
+          <input type="number" id="first" min="1" value="1" oninput="validity.valid||(value='')"><br>
 
-</form>
+          <label for="name">Name *</label><br>
+          <input type="number" id="second" min="1" value="2"><br>
 
+          <label for="name">Name *</label><br>
+          <input type="number" id="third" min="1" value="3"><br><br>
+          <input type="submit" onclick="average()" value="Submit">
+        </form>
 
-<!-- result -->
+          <h2 id='avg'></h2>
+          <h2 id='med'></h2>
 
-<script>
-  const form = document.getElementById('math-form');
-  form.addEventListener('submit', (event) => {
+          <script>
+          function average(){
+          const a=parseInt(document.getElementById("first").value);
+          const b=parseInt(document.getElementById("second").value);
+          const c=parseInt(document.getElementById("third").value);
+          const averageResult=((a+b+c)/3);
 
-    event.preventDefault();
-
-  })
-</script>
+          const median = arr => {
+          const mid = Math.floor(arr.length / 2),
+          nums = [...arr].sort((a, b) => a - b);
+          return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+          };
+            // console.log(median([a, b, c]));
+          document.getElementById('avg').innerHTML="The Average is "+averageResult;
+          document.getElementById('med').innerHTML="The Median is "+median([a, b, c]);
+          event.preventDefault();
+          }
+          </script>   
+      </body>
+  </html>
