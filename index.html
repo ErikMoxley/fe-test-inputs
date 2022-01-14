@@ -12,14 +12,16 @@
           const a=parseInt(document.getElementById("first").value);
           const b=parseInt(document.getElementById("second").value);
           const c=parseInt(document.getElementById("third").value);
-          // functions for calculating avg and medians. avg max decimal after whole # = 2
+
+          // functions for calculating average and medians. The average result max #s after decimal point = 2
           const averageResult = parseFloat(((a+b+c)/3).toFixed(2));
           const medianResult = arr => {
           const mid = Math.floor(arr.length / 2),
           nums = [...arr].sort((a, b) => a - b);
           return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
           };
-          // get id's of h2s that will display on submit. Show html text plus results of each functions above
+
+          // get id's of h2s that will display on submit. Shows html text plus results of each functions above
           document.getElementById('avg').innerHTML="The Average is "+averageResult;
           document.getElementById('med').innerHTML="The Median is "+medianResult([a, b, c]);
           event.preventDefault();
@@ -43,7 +45,7 @@
       </div>
 
       <style>
-        /* Some internal css styling to see it better */
+        /* I added some internal css styling to see it better */
         #container {
           width: 400px;
           height: 550px;
