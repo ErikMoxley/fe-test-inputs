@@ -12,11 +12,11 @@
           <form id="math-form">
             <h1>Input with positive numbers to find average and median</h1><br>
               <label>First Number *</label><br>
-              <input type="number" id="first" min="1" value="1" oninput="validity.valid||(value='')"><br>
+              <input type="number" id="first" min="1" value="1" onkeypress="return event.charCode >= 48"><br>
               <label>Second Number *</label><br>
-              <input type="number" id="second" min="1" value="2"><br>
+              <input type="number" id="second" min="1" value="2" onkeypress="return event.charCode >= 48"><br>
               <label>Third Number *</label><br>
-              <input type="number" id="third" min="1" value="3"><br><br>
+              <input type="number" id="third" min="1" value="3" onkeypress="return event.charCode >= 48"><br><br>
               <input type="submit" onclick="results()" value="Submit"><br><br>
             <h2 id='avg'></h2>
             <h2 id='med'></h2><br>
