@@ -8,39 +8,59 @@
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     </head>
       <body>
-        <form id="math-form">
-          <label>Input with positive numbers only</label><br/><br/>
-          <label for="name">Name *</label><br>
-          <input type="number" id="first" min="1" value="1" oninput="validity.valid||(value='')"><br>
+        <div id="container">
+          <form id="math-form">
+            <h1>Input with positive numbers to find average and median</h1><br>
+              <label>First Number *</label><br>
+              <input type="number" id="first" min="1" value="1" oninput="validity.valid||(value='')"><br>
+              <label>Second Number *</label><br>
+              <input type="number" id="second" min="1" value="2"><br>
+              <label>Third Number *</label><br>
+              <input type="number" id="third" min="1" value="3"><br><br>
+              <input type="submit" onclick="results()" value="Submit"><br><br>
+            <h2 id='avg'></h2>
+            <h2 id='med'></h2><br>
+          </form>
+        </div>
 
-          <label for="name">Name *</label><br>
-          <input type="number" id="second" min="1" value="2"><br>
-
-          <label for="name">Name *</label><br>
-          <input type="number" id="third" min="1" value="3"><br><br>
-          <input type="submit" onclick="average()" value="Submit">
-        </form>
-
-          <h2 id='avg'></h2>
-          <h2 id='med'></h2>
-
-          <script>
-          function average(){
+        <script>
+          function results(){
           const a=parseInt(document.getElementById("first").value);
           const b=parseInt(document.getElementById("second").value);
           const c=parseInt(document.getElementById("third").value);
-          const averageResult=((a+b+c)/3);
+          const averageResult = parseFloat(((a+b+c)/3).toFixed(2));
 
-          const median = arr => {
+          const medianResult = arr => {
           const mid = Math.floor(arr.length / 2),
           nums = [...arr].sort((a, b) => a - b);
-          return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+            return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+            };
+
+            document.getElementById('avg').innerHTML="The Average is "+averageResult;
+            document.getElementById('med').innerHTML="The Median is "+medianResult([a, b, c]);
+
+            event.preventDefault();
           };
-            // console.log(median([a, b, c]));
-          document.getElementById('avg').innerHTML="The Average is "+averageResult;
-          document.getElementById('med').innerHTML="The Median is "+median([a, b, c]);
-          event.preventDefault();
+        </script>   
+
+        <style>
+          #container {
+            width: 500px;
+            height: 500px;
+            margin: 10rem auto;
+            background-color: #aaaaaa;
           }
-          </script>   
+          #math-form {
+            text-align: center;
+            margin: 0.5rem;
+          }
+          h1 {
+            padding-top: 3rem;
+          }
+          input[type='number']{
+            width: 100px;
+            height: 20px;
+          }
+          </style>
       </body>
   </html>
