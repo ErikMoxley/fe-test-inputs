@@ -2,7 +2,7 @@
 * Front End Test Inputs HTML/JS
 ## Description
 * Front end test using javascript functions to display the average and median of 3 html inputs.
-* Started with <!DOCTYPE html> for live server to work.
+* Started with !DOCTYPE html for live server to work.
 * Used VSCode Live Server for continuous viewing while working on project.
 * Created results function that starts with setting each different input ID and sets it to a values a, b, c.
 * Created 2 more functions that displays average and median for newly set values.
