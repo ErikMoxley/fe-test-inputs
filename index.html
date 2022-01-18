@@ -9,17 +9,17 @@
         <script>
           function results(){
           // set values by id's of each inputs
-          const a=parseInt(document.getElementById("first").value);
-          const b=parseInt(document.getElementById("second").value);
-          const c=parseInt(document.getElementById("third").value);
+          //parseInt was not needed after changing return for medianResult
+          const a=Number(document.getElementById("first").value);
+          const b=Number(document.getElementById("second").value);
+          const c=Number(document.getElementById("third").value);
 
           // functions for calculating average and medians. The average result max #s after decimal point = 2
-          const averageResult = parseFloat(((a+b+c)/3).toFixed(2));
+          const averageResult = (((a+b+c)/3).toFixed(2));
           const medianResult = arr => {
-          const mid = Math.floor(arr.length / 2),
-          nums = [...arr].sort((a, b) => a - b);
-          return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+            return arr.sort((a, b) => a - b)[1];
           };
+
 
           // get id's of h2s that will display on submit. Shows html text plus results of each functions above
           document.getElementById('avg').innerHTML="The Average is "+averageResult;
