@@ -7,7 +7,6 @@
 * Created results function that starts with setting each different input ID and sets it to a values a, b, c.
 * Created 2 more functions that displays average and median for newly set values.
 * Also added .toFixed(2) to averageResult so that the max numbers after decimal point will be 2.
-* Created mid function to calculate the median after medianResults creates array.
 * getElementById for h2 lines that each displays innerHTML with text and each of the 2 results function on submit.
 * Created forms and inputs inside of div. "math-form" is where onsubmit is so html 'required' validation works correctly.
 * HTML setup on each input should prevent user from entering and arrowing to a negative number.

@@ -9,7 +9,7 @@
         <script>
           function results(){
           // set values by id's of each inputs
-          //parseInt was not needed after changing return for medianResult
+          // parseInt was not needed after changing return for medianResult
           const a = Number(document.getElementById("first").value);
           const b = Number(document.getElementById("second").value);
           const c = Number(document.getElementById("third").value);
@@ -21,8 +21,8 @@
           };
           
           // get id's of h2s that will display on submit. Shows html text plus results of each functions above
-          document.getElementById('avg').innerHTML = "The Average is "+averageResult;
-          document.getElementById('med').innerHTML = "The Median is "+medianResult([a, b, c]);
+          document.getElementById('avg').innerHTML = "The Average is " + averageResult;
+          document.getElementById('med').innerHTML = "The Median is " + medianResult([ a, b, c ]);
           event.preventDefault();
           };
         </script>   
