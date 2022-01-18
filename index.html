@@ -10,20 +10,19 @@
           function results(){
           // set values by id's of each inputs
           //parseInt was not needed after changing return for medianResult
-          const a=Number(document.getElementById("first").value);
-          const b=Number(document.getElementById("second").value);
-          const c=Number(document.getElementById("third").value);
+          const a = Number(document.getElementById("first").value);
+          const b = Number(document.getElementById("second").value);
+          const c = Number(document.getElementById("third").value);
 
           // functions for calculating average and medians. The average result max #s after decimal point = 2
-          const averageResult = (((a+b+c)/3).toFixed(2));
+          const averageResult = ((( a + b + c ) / 3).toFixed(2));
           const medianResult = arr => {
             return arr.sort((a, b) => a - b)[1];
           };
-
-
+          
           // get id's of h2s that will display on submit. Shows html text plus results of each functions above
-          document.getElementById('avg').innerHTML="The Average is "+averageResult;
-          document.getElementById('med').innerHTML="The Median is "+medianResult([a, b, c]);
+          document.getElementById('avg').innerHTML = "The Average is "+averageResult;
+          document.getElementById('med').innerHTML = "The Median is "+medianResult([a, b, c]);
           event.preventDefault();
           };
         </script>   
@@ -31,16 +30,33 @@
     <body>
       <div id="container">
         <form id="math-form" onsubmit="results();">
-          <h1>Input with positive numbers to find average and median.</h1><br>
-            <label>First Number *</label><br>
-            <input type="number" id="first" min="1" value="1" onkeypress="return event.charCode >= 48" required /><br>
-            <label>Second Number *</label><br>
-            <input type="number" id="second" min="1" value="2" onkeypress="return event.charCode >= 48" required /><br>
-            <label>Third Number *</label><br>
-            <input type="number" id="third" min="1" value="3" onkeypress="return event.charCode >= 48" required /><br><br>
-            <input type="submit" value="Submit" /><br><br>
+          <h1>Input with positive numbers to find average and median.</h1>
+          
+          <br>
+
+          <label>First Number *</label><br>
+          <input type="number" id="first" min="1" value="1" step="1" required />
+
+          <br>
+
+          <label>Second Number *</label><br>
+          <input type="number" id="second" min="1" value="2" step="1" required />
+
+          <br>
+
+          <label>Third Number *</label><br>
+          <input type="number" id="third" min="1" value="3" step="1" required />
+          
+          <br><br>
+
+          <input type="submit" value="Submit" />
+          <br><br>
+
           <h2 id='avg'></h2>
-          <h2 id='med'></h2><br>
+          <h2 id='med'></h2>
+
+          <br>
+          
         </form>
       </div>
 
@@ -61,7 +77,7 @@
           font-size: 2.0em;
           padding-top: 3rem;
         }
-        input[type='number']{
+        input[type='number'] {
           width: 100px;
           height: 20px;
         }
